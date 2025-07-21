@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyl Store - Premium Vinyl Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset y estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FFFFFF;
+            color: #121212;
+            width: 1440px;
+            min-height: 7093px;
+            margin: 0 auto;
+            position: relative;
+            border: 1px solid #121212;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #2a7f62;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin: 0 15px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #121212;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #2a7f62;
+        }
+        
+        .header-icons a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #121212;
+            font-size: 18px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                        url('https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 0 20%;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #2a7f62;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #2a7f62;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #1e5d46;
+        }
+        
+        /* Secciones comunes */
+        .section {
+            padding: 80px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #2a7f62;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #2a7f62;
+            margin: 15px auto;
+        }
+        
+        /* About Us Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2a7f62;
+        }
+        
+        .about-text p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .learn-more {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2a7f62;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #2a7f62;
+            padding-bottom: 5px;
+        }
+        
+        .about-image {
+            flex: 1;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1446071103084-c257b5f70648?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Why Choose Us Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .feature {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+            border: 1px solid #eee;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2a7f62;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature h3 i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        
+        .feature p {
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        /* Reviews Section */
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 100px;
+            color: rgba(42, 127, 98, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial p {
+            font-size: 20px;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #444;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2a7f62;
+        }
+        
+        .btn-reviews {
+            display: block;
+            width: 200px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2a7f62;
+        }
+        
+        .contact-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2a7f62;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 24px;
+            color: #2a7f62;
+            transition: transform 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #f8f8f8;
+            padding: 60px 40px 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #2a7f62;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #2a7f62;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #2a7f62;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            color: #777;
+        }
+        
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 30px 0;
+        }
+        
+        /* Contact section specific */
+        .contact-section {
+            background: #f9f9f9;
+            padding: 60px 40px;
+        }
+        
+        .contact-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-box h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #2a7f62;
+        }
+        
+        .contact-info-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+        }
+        
+        .contact-info-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .contact-info-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .follow-us {
+            margin-top: 30px;
+        }
+        
+        .follow-us h3 {
+            margin-bottom: 15px;
+            color: #2a7f62;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Vinyl Store</div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Sign In</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Collect The Discography Of Your Favorite Artists</h1>
+        <p>Listen your most cherished albums like never before with our online store</p>
+        <a href="#" class="btn">Shop now</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section">
+        <h2 class="section-title">About us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Why choose us ?</h3>
+                <p>Step now →</p>
+                <div class="divider"></div>
+                <h4>OUR STORY</h4>
+                <p>Vinyl<br>
+                EXAMPLE TEXT</p>
+                <div class="divider"></div>
+                <a href="#" class="learn-more">LEARN MORE</a>
+            </div>
+            <div class="about-image"></div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section">
+        <h2 class="section-title">Why choose us ?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3><i class="fas fa-spa"></i> Stylish bouquets by florists</h3>
+                <p>At our floral studio, our professional florists craft the most elegant and stylish bouquets using only the freshest and highest quality materials available. We stay up-to-date with the latest trends and designer results, creating unique compositions that are sure to impress. Let us brighten up your day with our stunning bouquets and same-day delivery service.</p>
+            </div>
+            <div class="feature">
+                <h3><i class="fas fa-truck"></i> On-time delivery</h3>
+                <p>Never miss a moment with our on-time flower delivery service. Our couriers will deliver your bouquet personally, without boxes, to ensure it arrives in perfect condition. Trust us to deliver your thoughtful gift reliably and with care.</p>
+            </div>
+            <div class="feature">
+                <h3><i class="fas fa-lock"></i> Safe payment</h3>
+                <p>You can feel secure when placing an order with us, as we use industry-standard security measures to protect your payment information. Your transaction will be safe and hassle-free, so you can shop with confidence.</p>
+            </div>
+            <div class="feature">
+                <h3><i class="fas fa-calendar-alt"></i> Subscription for your needs</h3>
+                <p>With our subscription service tailored to your specific needs, you can enjoy the convenience of having beautiful bouquets delivered straight to your door at regular intervals. It's perfect for monthly dates or for those who want to ensure they always have fresh flowers on hand. You'll save time and money with this hassle-free solution to your floral needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section">
+        <h2 class="section-title">Google REVIEWS</h2>
+        <h2 class="section-title">Our Clients say</h2>
+        <div class="testimonial">
+            <p>“Ordered flowers online and they were the best bouquet! Impressed everyone around. Highly recommend this flower shop!”</p>
+            <p class="testimonial-author">- Ronald Richards</p>
+            <p>⋯⋯</p>
+        </div>
+        <a href="#" class="btn btn-reviews">READ REVIEWS</a>
+    </section>
+
+    <!-- Subscription Section -->
+    <section class="section">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Remember to offer beautiful flowers for Mother's Day, Christmas...</h3>
+                <p>Reminds you 7 days before. No spam or sharing your address.</p>
+                <input type="email" placeholder="Your Email">
+                <a href="#" class="btn">Subscribe</a>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Address: 15/4 Khrushcharyk Street, Kyiv</p>
+                <p>Phone: +380980099777</p>
+                <p>Email: NewFlorist.Studios@gmail.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-box">
+            <h2>To Contact Us</h2>
+            <p>We will call you back<br>-180 XX XX XX XX</p>
+            <a href="#" class="btn">BOOK A CALL</a>
+            
+            <table class="contact-info-table">
+                <tr>
+                    <td><strong>Phone</strong></td>
+                    <td><strong>Address</strong></td>
+                </tr>
+                <tr>
+                    <td>- +380 9600 97777</td>
+                    <td>OPEN HOURS 9AM TO 9PM</td>
+                </tr>
+                <tr>
+                    <td>- +380 9600 99111</td>
+                    <td>$/A Shveshchenyk Street, Kyiv</td>
+                </tr>
+            </table>
+            
+            <div class="divider"></div>
+            
+            <h3>Kyiv LuxeBouquets</h3>
+            <p>Delivering the best floral arrangements in the country</p>
+            
+            <div class="divider"></div>
+            
+            <div class="follow-us">
+                <h3>Follow us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">All Products: Fresh Flowers</a></li>
+                    <li><a href="#">Dried Flowers</a></li>
+                    <li><a href="#">Live Plants</a></li>
+                    <li><a href="#">Designer Vases</a></li>
+                    <li><a href="#">Aroma Candles</a></li>
+                    <li><a href="#">Freshener Diffuser</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our story</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Shipping & returns</a></li>
+                    <li><a href="#">Terms & conditions</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Service</h3>
+                <ul>
+                    <li><a href="#">Flower Subscription</a></li>
+                    <li><a href="#">Wedding & Event Decor</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Address: 15/4 Khrushcharyk Street, Kyiv</p>
+                <p>Phone: +380980099777</p>
+                <p>Email: NewFlorist.Studios@gmail.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kyiv LuxeBouquets. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
