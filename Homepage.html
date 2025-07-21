@@ -437,19 +437,26 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+   <!-- Header -->
     <header class="header">
-        <div class="logo">Vinyl Store</div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Sign In</a></li>
+        <!-- Grupo izquierdo: Shop y Contact (en línea horizontal) -->
+        <nav class="nav-left">
+            <ul style="display: flex; list-style: none; padding: 0; margin: 0; gap: 20px;">
+                <li><a href="#" style="text-decoration: none;">Shop</a></li>
+                <li><a href="#" style="text-decoration: none;">Contact</a></li>
             </ul>
         </nav>
-        <div class="header-icons">
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-        </div>
+
+        <!-- Logo centrado -->
+        <div class="logo">Vinyl Store</div>
+
+        <!-- Grupo derecho: Sign in y Cart (en línea horizontal) -->
+        <nav class="nav-right">
+            <ul style="display: flex; list-style: none; padding: 0; margin: 0; gap: 20px;">
+                <li><a href="#" style="text-decoration: none;">Sign in</a></li>
+                <li><a href="#" style="text-decoration: none;">Cart</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
