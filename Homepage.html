@@ -184,6 +184,65 @@
             margin: 15px auto;
         }
         
+        /* Product Display */
+		.vinyl-grid-section {
+			padding: 60px 40px;
+			background: #f9f9f9;
+		}
+
+		/* Cuadrícula de productos */
+		.right-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr); /* Dos columnas por defecto */
+			gap: 30px;
+			justify-items: start; /* Alineación de cada celda a la izquierda */
+		}
+
+		/* Responsivo: 3 columnas en tablet, 4 en desktop */
+		@media (min-width: 768px) {
+			.right-grid {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		@media (min-width: 1024px) {
+			.right-grid {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+
+		/* Estilo individual del producto */
+		.grid-item {
+			background: #fff;
+			border-radius: 10px;
+			padding: 15px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+			transition: transform 0.3s;
+			text-align: left; /* Alineación del contenido */
+		}	
+
+		.grid-item:hover {
+			transform: translateY(-5px);
+		}
+
+		.grid-item img {
+			width: 100%;
+			border-radius: 10px;
+			margin-bottom: 10px;
+		}
+
+		.grid-item h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
+			color: #2a7f62;
+		}
+
+		.grid-item a {
+			color: #2a7f62;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
         /* About Us Section */
         .about-content {
             display: flex;
@@ -531,6 +590,41 @@
             </div>
         </div>
     </section>
+
+    <!-- Product display -->
+	<section class="vinyl-grid-section">
+		<div class="right-grid">
+			<div class="grid-item">
+			<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lacasadeldisco.es%2F25267-large_default%2Fcoldplay-vinilo-reciclado-color-music-of-the-spheres.jpg&f=1&nofb=1&ipt=a3f9566edc448ce0918cb0edcf98ca150c532081806f7dd19d93273980729f88" alt="Coldplay Vinil">
+			<h3>Coldplay Vinil</h3>
+			<a href="#">Shop now →</a>
+		</div>
+	
+		<div class="grid-item">
+			<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.thevinylstore.com.au%2Fwp-content%2Fuploads%2F2024%2F04%2FPINK-FLOYD-The-Dark-Side-Of-The-Moon-50th-Anniversary-2023-Remaster-2LP-UV-Printed-Clear-Vinyl.jpg&f=1&nofb=1&ipt=10c53a6f968a3841dbf3d26e1437f710a7d925bdf2d77b7f3cad01c970ec2ce0" alt="Pink Floyd Vinil">
+			<h3>Pink Floyd Vinil</h3>
+			<a href="#">← Shop now</a>
+		</div>
+	
+		<div class="grid-item">
+			<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thevinylstore.com.au%2Fwp-content%2Fuploads%2F2023%2F01%2FABBA-Gold-2LP-Set-PICTURE-DISC-30th-Anniversary-Limited-Edition.png&f=1&nofb=1&ipt=1fcdad8471142d649f0a4389a3b85f881d6f9c2d115d16a951f5530d603a1c50" alt="Abba Vinil">
+			<h3>Abba Vinil</h3>
+			<a href="#">Shop now →</a>
+		</div>
+	
+		<div class="grid-item">
+			<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn11.bigcommerce.com%2Fs-iq6934aszs%2Fimages%2Fstencil%2F960w%2Fproducts%2F3720%2F7977%2Flp-elvis-styles-record-store-day-rsd-2024-elvis-presley-tny__92583.1708132800.png%3Fc%3D1&f=1&nofb=1&ipt=625ab4f792696352a157d60c176ccb720fa9a749b58d44c4ac75e9d501ad80b7" alt="Elvis Vinil">
+			<h3>Elvis Vinil</h3>
+			<a href="#">← Shop now</a>
+		</div>
+	
+		<div class="grid-item">
+			<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsound-merch.com.au%2Fcdn%2Fshop%2Ffiles%2FCOLDPLAY_1024x1024.png%3Fv%3D1705377877&f=1&nofb=1&ipt=badb266847b2b6cdd99797ae82daa44909eac0851b55c9ea259d854bbc86e133" alt="Coldplay Vinil">
+				<h3>Coldplay Vinil</h3>
+				<a href="#">Shop now →</a>
+			</div>
+		</div>
+	</section>
 
     <!-- About Us Section -->
     <section class="section">
