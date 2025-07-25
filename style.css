@@ -2,38 +2,37 @@
 body {
     margin: 0;
     font-family: helvetica, sans-serif;
-    background-color: #fff; /* Un color de fondo suave */
+    background-color: #fff; 
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Asegura que ocupe al menos el alto de la pantalla */
+    min-height: 100vh; 
     border: 2px solid #121212;
 }
+/*Sección Header*/
 
 /* Sección Hero (Contenedor Principal) */
 .hero-section {
     width: 100%;
-    max-width: 400px; /* Ancho máximo para el diseño móvil, ajusta si Figma indica otro */
-    padding: 30px; /* Espaciado interno generoso para el contenido */
-    box-sizing: border-box; /* Incluye padding en el ancho */
-    background-color: #fff; /* Fondo blanco para la sección hero */
+    max-width: 400px; /* Ancho máximo para el diseño móvil */
+    padding: 30px; 
+    box-sizing: border-box; 
+    background-color: #fff; 
     display: flex;
     flex-direction: column; /* Apila todos los elementos verticalmente */
-    /* No hay 'gap' global aquí, controlaremos los espaciados con márgenes para más precisión */
-    
 }
 
 /* Parte Superior del Hero (Título y Subtítulo) */
 .hero-top {
     text-align: left;
-    margin-bottom: 30px; /* Espacio generoso debajo del párrafo superior antes del divisor */
+    margin-bottom: 30px; /* Espacio generoso debajo del párrafo superior*/
 }
 
 .hero-top h1 {
-    font-size: 45px; /* Tamaño de fuente más grande para el título principal */
+    font-size: 45px; 
     line-height: 1.1; /* Ajusta el espaciado entre líneas */
     margin-bottom: 15px; /* Espacio debajo del título */
-    font-weight: 600; /* Un peso de fuente más grueso que 'bold' para un look audaz */
-    color: #333; /* Color oscuro para el texto */
+    font-weight: 600; 
+    color: #000000; 
 }
 
 .hero-top h1 sup {
@@ -52,8 +51,8 @@ body {
 .divider {
     border: none;
     border-top: 1px solid #ccc; /* Línea gris delgada */
-    width: 100%; /* Asegura que la línea abarque todo el ancho */
-    margin-bottom: 30px; /* Espacio generoso debajo del divisor */
+    width: 100%; /* Cuanto ancho abarca la linea */
+    margin-bottom: 30px; /* Espacio debajo del divisor */
 }
 
 /* Parte Inferior del Hero (Imagen y Texto) */
@@ -62,15 +61,14 @@ body {
     flex-direction: column; /* Apila la imagen y el texto verticalmente */
     align-items: center; /* Centra la imagen y el texto horizontalmente */
     text-align: center; /* Centra el texto */
-    /* No hay 'gap' aquí, usaremos márgenes específicos */
 }
 
 .hero-image-container {
     width: 100%;
     max-width: 300px; /* Limita el ancho de la imagen para móviles */
     overflow: hidden;
-    border-radius: 8px; /* Bordes ligeramente redondeados */
-    margin-bottom: 30px; /* Espacio debajo de la imagen antes del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 30px; /* Espacio debajo de la imagen */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para la imagen */
 }
 
@@ -87,13 +85,12 @@ body {
     margin: 0; /* Elimina márgenes por defecto */
 }
 
-/* Media Query para Tabletas y Escritorio (si quieres que la disposición cambie) */
-/* El diseño de Komodo Productions parece ser apilado incluso en pantallas grandes,
-   pero si más adelante quieres algo lado a lado, este es el lugar: */
+/* Media Query para Tabletas y Escritorio  */
+
 @media (min-width: 768px) {
     .hero-section {
-        max-width: 500px; /* Podrías aumentar el ancho máximo para una pantalla de escritorio */
-        padding: 50px; /* Más padding para pantallas grandes */
+        max-width: 500px; /* ancho máximo para una pantalla de escritorio */
+        padding: 50px; /* padding para pantallas grandes */
     }
 
     .hero-top h1 {
@@ -104,7 +101,7 @@ body {
         font-size: 20px; /* Ajuste para el tamaño del subtítulo en escritorio */
     }
 
-    /* Si quisieras la imagen y texto en la parte inferior lado a lado en escritorio:
+    /* 
     .hero-bottom {
         flex-direction: row;
         align-items: flex-start; // Alinea arriba
