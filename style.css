@@ -9,6 +9,67 @@ body {
     border: 2px solid #121212;
 }
 /*Sección Header*/
+/* --- Estilos base (escritorio) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #e29fe0;
+}
+
+.nav-left ul,
+.nav-right ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem; /* Un poco más grande para destacar */
+    color: #085e69;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #085e69;
+}
+
+/* --- Responsive (móviles, menos de 768px) --- */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos fluyan en múltiples líneas */
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .nav-left,
+    .nav-right {
+        width: auto;
+    }
+
+    .nav-left ul,
+    .nav-right ul {
+        flex-direction: row; /* Mantenemos en fila los links */
+        gap: 20px;
+    }
+
+
+    .logo {
+        width: 100%; /* Ocupa todo el ancho */
+        text-align: center;
+        order: 1; /* Lo coloca debajo */
+        margin: 10px 0;
+    }
+
+  
+}
 
 /* Sección Hero (Contenedor Principal) */
 .hero-section {
