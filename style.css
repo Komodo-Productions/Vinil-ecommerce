@@ -1,21 +1,36 @@
 /* Estilos Generales y Reset */
 body {
     margin: 0;
+    padding: 0;
     font-family: helvetica, sans-serif;
     background-color: #fff; 
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    border: 2px solid #121212;
 }
+
+.main-content-wrapper {
+    width: 100%; /* Ocupa el 100% del body */
+    max-width: 400px; /* CAMBIO CLAVE: Este es el ancho limitado de tu diseño móvil */
+    margin: 0 auto; /* Centra este contenedor en la pantalla */
+    border: 2px solid #121212; 
+    background-color: #fff; 
+    padding: 0 30px;
+    min-height: 100vh; /* Asegura que el contenedor principal ocupe al menos la altura de la pantalla */
+    box-sizing: border-box; /* Asegura que el padding/border no añadan ancho */
+    display: flex; /* Para que sus hijos (header, hero) se apilen verticalmente */
+    flex-direction: column;
+}
+
 /*Sección Header*/
 /* --- Estilos base (escritorio) --- */
 .header {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    max-width: none;
     align-items: center;
-    padding: 1rem 2rem;
+    box-sizing: border-box;
     background-color: #e29fe0;
+    padding: 15px 20px; 
+    margin-bottom: 20px; /*espacio entre el header y el hero*/
 }
 
 .nav-left ul,
@@ -74,63 +89,73 @@ a {
 /* Sección Hero (Contenedor Principal) */
 .hero-section {
     width: 100%;
-    max-width: 400px; /* Ancho máximo para el diseño móvil */
-    padding: 30px; 
-    box-sizing: border-box; 
-    background-color: #fff; 
+    max-width: none; /* Ancho máximo para el diseño móvil */
+    margin: 0;
+    padding: 15px 0;
+    box-sizing: border-box;
+    background-color: #fff;
     display: flex;
-    flex-direction: column; /* Apila todos los elementos verticalmente */
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 /* Parte Superior del Hero (Título y Subtítulo) */
 .hero-top {
     text-align: left;
-    margin-bottom: 30px; /* Espacio generoso debajo del párrafo superior*/
+    margin-bottom: 30px;
 }
 
 .hero-top h1 {
-    font-size: 45px; 
-    line-height: 1.1; /* Ajusta el espaciado entre líneas */
-    margin-bottom: 15px; /* Espacio debajo del título */
-    font-weight: 600; 
-    color: #000000; 
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
 }
 
 .hero-top h1 sup {
-    font-size: 0.5em; /* Tamaño del símbolo de marca registrada */
+    font-size: 0.5em;
     vertical-align: super;
 }
 
 .hero-top p {
-    font-size: 18px; /* Tamaño de fuente para el subtítulo */
+    font-size: 18px;
     line-height: 1.5;
-    color: #666; /* Un color un poco más claro para el subtítulo */
-    margin: 0; /* Elimina el margen inferior por defecto si lo hay */
+    color: #666;
+    margin: 0;
 }
 
-/* Divisor */
-.divider {
+/* Divisor Horizontal */
+.divider-horizontal { 
     border: none;
-    border-top: 1px solid #ccc; /* Línea gris delgada */
-    width: 100%; /* Cuanto ancho abarca la linea */
-    margin-bottom: 30px; /* Espacio debajo del divisor */
-}
-
-/* Parte Inferior del Hero (Imagen y Texto) */
-.hero-bottom {
-    display: flex;
-    flex-direction: column; /* Apila la imagen y el texto verticalmente */
-    align-items: center; /* Centra la imagen y el texto horizontalmente */
-    text-align: center; /* Centra el texto */
-}
-
-.hero-image-container {
+    border-top: 1px solid #ccc;
     width: 100%;
-    max-width: 300px; /* Limita el ancho de la imagen para móviles */
+    margin-bottom: 30px;
+}
+
+/* Parte Inferior del Hero (Contenedor de las dos cajas) */
+.hero-bottom {
+    display: flex; /* Activa Flexbox */
+    flex-direction: row; /* POR DEFECTO: Apila las cajas en pantallas pequeñas */
+    gap: 20px; /* Espacio entre las cajas cuando están apiladas */
+    align-items: center; /* Centra las cajas cuando están apiladas */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 40px;
+}
+
+/* Estilos para las "cajas" dentro de hero-bottom */
+.hero-box {
+    width: 100%; /* Cada caja ocupa todo el ancho disponible en móvil */
+}
+
+/* Contenedor de la Imagen */
+.hero-image-container {
+    width: 100%; /* La imagen ocupa el 100% de su propia caja */
+    max-width: 300px; /* Hacemos la imagen más pequeña para el diseño móvil */
+    margin: 0 auto; /* Centra la imagen dentro de su caja en móvil */
     overflow: hidden;
-    border-radius: 8px; /* Bordes redondeados */
-    margin-bottom: 30px; /* Espacio debajo de la imagen */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para la imagen */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero-image-container img {
@@ -139,11 +164,135 @@ a {
     display: block;
 }
 
+/* Contenedor del Texto Inferior */
+.hero-text-content {
+    width: 100%; /* El texto ocupa el 100% de su propia caja */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el texto verticalmente y horizontalmente en móvil */
+    min-height: 100px; 
+}
+
 .hero-text-content p {
-    font-size: 16px; /* Tamaño de fuente para el párrafo inferior */
+    font-size: 16px;
     line-height: 1.6;
     color: #555;
-    margin: 0; /* Elimina márgenes por defecto */
+    margin: 0;
+}
+
+.about-us-section {
+    width: 100%; /* Ocupa el 100% del .main-content-wrapper */
+    box-sizing: border-box;
+    margin-top: 60px; /* Espacio entre el hero y esta sección */
+    /* No se requiere display: flex directamente aquí si el contenido es apilado por defecto */
+}
+
+.about-us-section .section-title {
+    /* En la imagen, este título "About us" tiene su propio recuadro/fondo */
+    padding: 40px 60px; /* Padding para el título */
+    margin: -60px -30px 60px -60px; /* Margen negativo para extender el fondo del título */
+    border-top: 2px solid #121212; 
+    box-sizing: border-box;
+    border-bottom: 2px solid #121212; /* Borde inferior para separar visualmente */
+}
+
+.about-us-section .section-title h2 {
+    font-size: 32px; /* Tamaño del título "About us" */
+    font-weight: bold;
+    color: #333;
+    margin: 0; /* Elimina márgenes por defecto del h2 */
+    text-align: left;
+}
+
+.about-us-section .about-content {
+    /* Contenedor del texto y botón */
+    
+    padding: 11px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #121212; /* Color y grosor de la línea */
+  margin: 40px -30px; /* Espaciado arriba y abajo */
+}
+
+.about-us-section .our-story-label {
+    font-size: 12px; /* Tamaño del texto "OUR STORY" */
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 24px; /* Espacio debajo del label */
+    display: block; /* Para que ocupe su propia línea */
+    font-weight: bold;
+}
+
+.about-us-section h3 {
+    font-size: 24px; /* Tamaño del título "Kyiv LuxeBouquets" */
+    font-weight: bold;
+    color: #333;
+    margin-top: 0; /* Elimina margen superior por defecto */
+    margin-bottom: 16px; /* Espacio debajo del subtítulo */
+}
+
+.about-us-section p {
+    font-size: 16px; /* Tamaño del párrafo */
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 64px; /* Espacio antes del botón */
+}
+
+.learn-more-button {
+    background-color: transparent; /* Fondo transparente */
+    border: 1px solid #333; /* Borde */
+    color: #333; /* Color del texto */
+    padding: 16px 96px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para hover */
+}
+
+.learn-more-button:hover {
+    
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Media Query para Tabletas y Escritorio */
+@media (min-width: 768px) {
+    /* El .main-content-wrapper ya se ajustará automáticamente por su media query */
+    .about-us-section {
+        padding: 50px; /* Más padding para pantallas grandes */
+    }
+
+    .about-us-section .section-title {
+        padding: 30px 50px; /* Ajustar padding del título para desktop */
+        margin: -50px -50px 40px -50px; /* Ajustar margen negativo */
+    }
+
+    .about-us-section .section-title h2 {
+        font-size: 40px; /* Tamaño del título más grande en desktop */
+    }
+
+    .about-us-section .our-story-label {
+        font-size: 14px;
+    }
+
+    .about-us-section h3 {
+        font-size: 30px;
+    }
+
+    .about-us-section p {
+        font-size: 17px;
+    }
+
+    .learn-more-button {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
 }
 
 /* Media Query para Tabletas y Escritorio  */
