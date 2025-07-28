@@ -125,34 +125,35 @@ a {
     margin: 0;
 }
 
-/* Divisor Horizontal */
+/* Divisor Horizontal del header*/
 .divider-horizontal { 
     border: none;
     border-top: 1px solid #ccc;
-    width: 100%;
+    width: 90%;
+    padding: 0 10px;
     margin-bottom: 30px;
 }
 
 /* Parte Inferior del Hero (Contenedor de las dos cajas) */
 .hero-bottom {
     display: flex; /* Activa Flexbox */
-    flex-direction: row; /* POR DEFECTO: Apila las cajas en pantallas pequeñas */
-    gap: 20px; /* Espacio entre las cajas cuando están apiladas */
-    align-items: center; /* Centra las cajas cuando están apiladas */
-    text-align: center; /* Centra el texto */
+    flex-direction: row; /* junta las cajas */
+    gap: 20px; /* Espacio entre las cajas */
+    align-items: center; /* Centra las cajas cuando están juntas */
+    text-align: left; /* Centra el texto */
     margin-bottom: 40px;
 }
 
-/* Estilos para las "cajas" dentro de hero-bottom */
+/* Estilos para las cajas dentro de hero-bottom */
 .hero-box {
-    width: 100%; /* Cada caja ocupa todo el ancho disponible en móvil */
+    width: 100%; /* Cada caja ocupa todo el ancho disponible */
 }
 
 /* Contenedor de la Imagen */
 .hero-image-container {
     width: 100%; /* La imagen ocupa el 100% de su propia caja */
-    max-width: 300px; /* Hacemos la imagen más pequeña para el diseño móvil */
-    margin: 0 auto; /* Centra la imagen dentro de su caja en móvil */
+    max-width: 300px; /* tama;o de la imagen */
+    margin: 0 auto; /* Centra la imagen dentro de su caja */
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -169,7 +170,7 @@ a {
     width: 100%; /* El texto ocupa el 100% de su propia caja */
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra el texto verticalmente y horizontalmente en móvil */
+    justify-content: center; /* Centra el texto vertical y horizontalmente  */
     min-height: 100px; 
 }
 
@@ -181,23 +182,22 @@ a {
 }
 
 .about-us-section {
-    width: 100%; /* Ocupa el 100% del .main-content-wrapper */
+    width: 100%; /* Ocupa el 100% del contenedor principal */
     box-sizing: border-box;
     margin-top: 60px; /* Espacio entre el hero y esta sección */
-    /* No se requiere display: flex directamente aquí si el contenido es apilado por defecto */
+    
 }
 
 .about-us-section .section-title {
-    /* En la imagen, este título "About us" tiene su propio recuadro/fondo */
     padding: 40px 60px; /* Padding para el título */
     margin: -60px -30px 60px -60px; /* Margen negativo para extender el fondo del título */
     border-top: 2px solid #121212; 
     box-sizing: border-box;
-    border-bottom: 2px solid #121212; /* Borde inferior para separar visualmente */
+    border-bottom: 2px solid #121212; /* Borde inferior para separar  */
 }
 
 .about-us-section .section-title h2 {
-    font-size: 32px; /* Tamaño del título "About us" */
+    font-size: 32px; 
     font-weight: bold;
     color: #333;
     margin: 0; /* Elimina márgenes por defecto del h2 */
@@ -207,19 +207,20 @@ a {
 .about-us-section .about-content {
     /* Contenedor del texto y botón */
     
-    padding: 11px;
+    padding: 0px;
     box-sizing: border-box;
     text-align: left;
 }
 
-hr {
+.divider {
   border: none;
   border-top: 2px solid #121212; /* Color y grosor de la línea */
   margin: 40px -30px; /* Espaciado arriba y abajo */
 }
 
+
 .about-us-section .our-story-label {
-    font-size: 12px; /* Tamaño del texto "OUR STORY" */
+    font-size: 12px; /* Tamaño del texto  */
     text-transform: uppercase;
     color: #888;
     margin-bottom: 24px; /* Espacio debajo del label */
@@ -228,7 +229,7 @@ hr {
 }
 
 .about-us-section h3 {
-    font-size: 24px; /* Tamaño del título "Kyiv LuxeBouquets" */
+    font-size: 24px; /* Tamaño del título*/
     font-weight: bold;
     color: #333;
     margin-top: 0; /* Elimina margen superior por defecto */
@@ -243,7 +244,7 @@ hr {
 }
 
 .learn-more-button {
-    background-color: transparent; /* Fondo transparente */
+    background-color: transparent; /* Fondo transparente, para que sea del mismo color*/
     border: 1px solid #333; /* Borde */
     color: #333; /* Color del texto */
     padding: 16px 96px;
@@ -259,7 +260,6 @@ hr {
     background-color: #333;
     color: #fff;
 }
-
 
 /* Media Query para Tabletas y Escritorio */
 @media (min-width: 768px) {
