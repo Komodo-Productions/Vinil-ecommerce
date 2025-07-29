@@ -28,7 +28,7 @@ body {
     max-width: none;
     align-items: center;
     box-sizing: border-box;
-    background-color: #e29fe0;
+    background-color: #fff;
     padding: 15px 20px; 
     margin-bottom: 20px; /*espacio entre el header y el hero*/
 }
@@ -550,6 +550,55 @@ input[type="email"] {
     }
 }
 
+/* reviews section */
+
+.reviews-section{
+    width: 100%;
+    max-width: none; /* Ancho máximo para el diseño móvil */
+    padding: 0px 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    align-items: center;
+
+}
+
+.reviews-section h2{
+
+    font-size: 32px; 
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.reviews-section p{
+
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+
+}
+
+/*btn*/
+.reviews-section button{
+    width: 80%;
+    padding: 10px 39px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-size: 10px;
+    color: black;
+}
+
+.reviews-section button:hover {
+    background-color: #1e5d46;
+    color: white;
+}
+
 
 /* footer section */
 
@@ -567,7 +616,7 @@ footer {
 .footer-email{
 
     text-align: center;
-    border-top: 1px solid black;
+    border-top: 1px solid #ccc;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
@@ -577,7 +626,7 @@ footer {
 .footer-info{
 
     text-align: center;
-    border-top: 1px solid black;
+    border-top: 1px solid #ccc;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
@@ -644,3 +693,5 @@ footer p {
     color: white; 
     font-size: 10;
 }
+
+
