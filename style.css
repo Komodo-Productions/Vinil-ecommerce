@@ -812,8 +812,10 @@ input[type="email"] {
 
 footer {
     width: 100%;
-    max-width: none; /* Ancho máximo para el diseño móvil */
+    max-width: 768px;
     margin: 0;
+    margin-top: 60px;
+    margin-bottom: 20px;
     box-sizing: border-box;
     background-color: #fff;
     display: grid;
@@ -824,17 +826,16 @@ footer {
 .footer-email{
 
     text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 30px;
+    padding: 15px 30px;
+    border-top: 1px solid #121212;
+    
 }
 
 .footer-info{
 
     text-align: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 30px;
+    padding: 15px 30px;
+    border-top: 1px solid #121212;
 }
 
 /* textbox email para el footer */
@@ -872,7 +873,7 @@ footer h3 {
 
 footer h4 {
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
      margin-top: 15px;
     margin-bottom: 0.5px;
     font-weight: 200;
@@ -881,7 +882,7 @@ footer h4 {
 
 footer p {
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     color: #333;
     margin-bottom: 15px;
 
@@ -902,3 +903,46 @@ footer p {
 }
 
 
+/* Media Queries para pantallas más grandes */
+@media (min-width: 768px) {
+
+    footer{
+        max-width: 1600px;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    .footer-info{
+
+        border-left: 1px solid #121212;
+    }
+
+    footer h4 {
+        font-size: 16px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+
+    .reviews-section button{
+        width: 30%;
+    
+    }
+
+    .reviews-section h2{
+
+        font-size: 32px; 
+        margin-bottom: 20px;
+
+    }
+
+    .reviews-section p{
+
+        text-align: center;
+        font-size: 22px;
+        color: #333;
+
+    }
+
+
+}
