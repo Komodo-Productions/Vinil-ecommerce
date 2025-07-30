@@ -4,16 +4,16 @@ body {
     padding: 0;
     font-family: helvetica, sans-serif;
     background-color: #fff; 
+    border: 2px solid #121212;
 }
 
 .main-content-wrapper {
     width: 100%; /* Ocupa el 100% del body */
     max-width: 400px; /* CAMBIO CLAVE: Este es el ancho limitado de tu diseño móvil */
-    margin: 0 auto; /* Centra este contenedor en la pantalla */
-    border: 2px solid #121212; 
+     /* Centra este contenedor en la pantalla */
     background-color: #fff; 
     padding: 0 30px;
-    min-height: 100vh; /* Asegura que el contenedor principal ocupe al menos la altura de la pantalla */
+    
     box-sizing: border-box; /* Asegura que el padding/border no añadan ancho */
     display: flex; /* Para que sus hijos (header, hero) se apilen verticalmente */
     flex-direction: column;
@@ -29,8 +29,8 @@ body {
     align-items: center;
     box-sizing: border-box;
     background-color: #fff;
-    padding: 15px 20px; 
-    margin-bottom: 20px; /*espacio entre el header y el hero*/
+    padding: 0px 0px; 
+    margin-bottom: 0px; /*espacio entre el header y el hero*/
 }
 
 .nav-left ul,
@@ -181,6 +181,29 @@ a {
     margin: 0;
 }
 
+/* Media Queries para pantallas más grandes */
+@media (min-width: 768px) {
+    .main-content-wrapper{
+        max-width: 1600px;
+    }
+    .divider{
+        width: 1250;
+
+    }
+    .hero-bottom {
+        flex-direction: row; /* Cambia a fila en pantallas más grandes */
+    }
+    .hero-box {
+        width: 50%; /* Cada caja ocupa el 50% del ancho disponible */
+    }
+    .hero-top h1 {
+        font-size: 64px; /* Aumenta el tamaño de la fuente en pantallas más grandes */
+    }
+    .hero-top p {
+        font-size: 20px; /* Aumenta el tamaño de la fuente en pantallas más grandes */
+    }
+}
+
 /*Product Display */
 * {
     margin: 0;
@@ -189,7 +212,7 @@ a {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'helvetica', sans-serif;
     background: #f5f5f5;
     color: #333;
 }
@@ -204,7 +227,7 @@ body {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: #2a7f62;
+    color: #000000;
     margin-bottom: 40px;
     font-weight: 300;
 }
@@ -368,16 +391,12 @@ body {
 .about-us-section {
     width: 100%; /* Ocupa el 100% del contenedor principal */
     box-sizing: border-box;
-    margin-top: 60px; /* Espacio entre el hero y esta sección */
+   
     
 }
 
 .about-us-section .section-title {
-    padding: 40px 60px; /* Padding para el título */
-    margin: -60px -30px 60px -60px; /* Margen negativo para extender el fondo del título */
-    border-top: 2px solid #121212; 
     box-sizing: border-box;
-    border-bottom: 2px solid #121212; /* Borde inferior para separar  */
 }
 
 .about-us-section .section-title h2 {
@@ -399,7 +418,12 @@ body {
 .divider {
   border: none;
   border-top: 2px solid #121212; /* Color y grosor de la línea */
-  margin: 40px -30px; /* Espaciado arriba y abajo */
+  margin: 30px -30px; /* Espaciado arriba y abajo */
+}
+
+.divider2 {
+    border: none;
+    border-top: 2px solid #121212;
 }
 
 
@@ -440,7 +464,6 @@ body {
 }
 
 .learn-more-button:hover {
-    
     background-color: #333;
     color: #fff;
 }
@@ -528,7 +551,7 @@ body {
 .contact-form h3 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #2a7f62;
+    color: #000000;
 }
 
 .contact-form input {
@@ -596,7 +619,7 @@ body {
 }
 
 .contact-box {
-    background: rgb(180, 241, 231);
+    background: rgb(255, 255, 255);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
