@@ -128,7 +128,7 @@ a {
 /* Divisor Horizontal del header*/
 .divider-horizontal { 
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 2px solid #ccc;
     width: 90%;
     padding: 0 10px;
     margin-bottom: 30px;
@@ -181,6 +181,11 @@ a {
     margin: 0;
 }
 
+.about-section{
+    flex-direction: column;
+    width: 100%;
+}
+
 /* Media Queries para pantallas más grandes */
 @media (min-width: 768px) {
     .main-content-wrapper{
@@ -188,7 +193,6 @@ a {
     }
     .divider{
         width: 1250;
-
     }
     .hero-bottom {
         flex-direction: row; /* Cambia a fila en pantallas más grandes */
@@ -202,6 +206,8 @@ a {
     .hero-top p {
         font-size: 20px; /* Aumenta el tamaño de la fuente en pantallas más grandes */
     }
+   
+    
 }
 
 /*Product Display */
@@ -391,8 +397,6 @@ body {
 .about-us-section {
     width: 100%; /* Ocupa el 100% del contenedor principal */
     box-sizing: border-box;
-   
-    
 }
 
 .about-us-section .section-title {
@@ -472,16 +476,31 @@ body {
 @media (min-width: 768px) {
     /* El .main-content-wrapper ya se ajustará automáticamente por su media query */
     .about-us-section {
-        padding: 50px; /* Más padding para pantallas grandes */
+        padding: 40px; /* Más padding para pantallas grandes */
     }
 
     .about-us-section .section-title {
         padding: 30px 50px; /* Ajustar padding del título para desktop */
         margin: -50px -50px 40px -50px; /* Ajustar margen negativo */
+        position: sticky; /* Hacer que el título sea sticky */
+        top: 0; /* Mantenerlo en la parte superior al hacer scroll */
+        
     }
 
     .about-us-section .section-title h2 {
         font-size: 40px; /* Tamaño del título más grande en desktop */
+    }
+
+    .divider-vertical {
+   
+        width: 2px;
+        background-color: black;
+        height: 100%;
+
+    }
+
+    .about-us-section .about-content{
+        border-right: 2px #000000;
     }
 
     .about-us-section .our-story-label {
@@ -500,13 +519,16 @@ body {
         padding: 15px 30px;
         font-size: 16px;
     }
-}
 
-/* Media Query para Tabletas y Escritorio  */
+    .about-section{
+        display: flex;
+        flex-direction: row;
+    }
+}
 
 @media (min-width: 768px) {
     .hero-section {
-        max-width: 500px; /* ancho máximo para una pantalla de escritorio */
+        max-width: 700px; /* ancho máximo para una pantalla de escritorio */
         padding: 50px; /* padding para pantallas grandes */
     }
 
@@ -518,24 +540,6 @@ body {
         font-size: 20px; /* Ajuste para el tamaño del subtítulo en escritorio */
     }
 
-    /* 
-    .hero-bottom {
-        flex-direction: row;
-        align-items: flex-start; // Alinea arriba
-        text-align: left;
-        gap: 40px;
-    }
-    .hero-image-container {
-        width: 50%;
-        max-width: none;
-        margin-bottom: 0; // Elimina margen inferior si están en fila
-    }
-    .hero-text-content {
-        width: 50%;
-    }
-    */
-        
-}
 /* Contact Section */
 .contact-container {
     display: flex;
@@ -901,7 +905,9 @@ footer p {
     color: white; 
     font-size: 10;
 }
+@media (min-width: 768px) {
 
+}
 
 /* Media Queries para pantallas más grandes */
 @media (min-width: 768px) {
