@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: helvetica, sans-serif;
+    font-family: 'roboto', sans-serif;
     background-color: #fff; 
     border: 2px solid #121212;
 }
@@ -217,11 +217,7 @@ a {
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'helvetica', sans-serif;
-    background: #f5f5f5;
-    color: #333;
-}
+
 
 /* Product Display Section */
 .vinyl-grid-section {
