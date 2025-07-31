@@ -565,7 +565,7 @@ a {
 
 .contact-info {
     width: 100%;
-    background: #f9f9f9;
+    background: #fff;
     padding: 30px;
     border-radius: 10px;
 }
@@ -597,7 +597,7 @@ a {
 .social-icons a:hover {
     transform: translateY(-5px);
 }
-
+}
 /* Media Queries para pantallas más grandes */
 @media (min-width: 768px) {
     .contact-container {
@@ -762,13 +762,14 @@ input[type="email"] {
 .reviews-section{
     width: 100%;
     max-width: none; /* Ancho máximo para el diseño móvil */
-    padding: 0px 15px;
+    /*padding: 0px 15px;*/
     box-sizing: border-box;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
     align-items: center;
+    padding: 80px;
 
 }
 
@@ -814,7 +815,6 @@ footer {
     width: 100%;
     max-width: 768px;
     margin: 0;
-    margin-top: 60px;
     margin-bottom: 20px;
     box-sizing: border-box;
     background-color: #fff;
