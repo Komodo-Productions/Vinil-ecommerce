@@ -539,7 +539,7 @@ body {
     .hero-top p {
         font-size: 20px; /* Ajuste para el tamaño del subtítulo en escritorio */
     }
-
+}
 /* Contact Section */
 .contact-container {
     display: flex;
@@ -550,11 +550,17 @@ body {
 
 .contact-form {
     width: 100%;
+
 }
 
 .contact-form h3 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    color: #000000;
+}
+
+.contact-form p {
+    margin-bottom: 25px;
     color: #000000;
 }
 
@@ -601,7 +607,7 @@ body {
 .social-icons a:hover {
     transform: translateY(-5px);
 }
-}
+
 /* Media Queries para pantallas más grandes */
 @media (min-width: 768px) {
     .contact-container {
@@ -766,14 +772,13 @@ input[type="email"] {
 .reviews-section{
     width: 100%;
     max-width: none; /* Ancho máximo para el diseño móvil */
-    /*padding: 0px 15px;*/
+    padding: 16px;
     box-sizing: border-box;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
     align-items: center;
-    padding: 80px;
 
 }
 
@@ -928,6 +933,10 @@ footer p {
 
     footer p {
         font-size: 16px;
+    }
+
+    .reviews-section{
+        padding: 80px;
     }
 
     .reviews-section button{
